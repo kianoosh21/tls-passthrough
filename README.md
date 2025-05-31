@@ -4,11 +4,6 @@ This guide explains how to tunnel TLS traffic from your server to a foreign VPS 
 
 ---
 
-## Requirements
-
-- A server with Ubuntu/Debian
-- External VPS with a service running on port 443
-- Domain added to Cloudflare DNS with proxy (orange cloud) enabled
 
 ---
 
@@ -45,12 +40,10 @@ Paste the following configuration:
 stream {
     server {
         listen 443;
-        proxy_pass domain-kharej-proxy-on:443;
+        proxy_pass ip:port;
     }
 }
 ```
-
-> Replace `domain-kharej-proxy-on` with the **domain of your external VPS** that you've proxied through Cloudflare.
 
 Save and exit the file:
 - Press `Ctrl + X`
@@ -78,15 +71,6 @@ sudo systemctl restart nginx
 ```
 
 ---
-
-## Step 6: Update Your Client Configuration
-
-In your client app or config:
-
-- Set **server address** to the **IP of your server**
-- Set **SNI**, **ws-host**, or **grpc-host** fields to the **Cloudflare domain** you configured earlier
-
-This behaves just like using a clean Cloudflare IP, except your server now acts as the middleman.
 
 ---
 
