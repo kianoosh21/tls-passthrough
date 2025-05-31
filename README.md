@@ -1,4 +1,4 @@
-# Nginx TLS Tunnel: Forwarding Traffic to External VPS
+# Nginx TLS passthrough: Forwarding Traffic to Backend serve with end to end encryption.
 
 This guide explains how to tunnel TLS traffic from your server to a foreign VPS using Nginx's `stream` module. This setup allows proxying through your own infrastructure using Cloudflare.
 
