@@ -76,4 +76,4 @@ sudo systemctl restart nginx
 
 ## Done!
 
-Your server now tunnels TLS traffic to your foreign VPS using Nginx with Cloudflare's proxy in front.
+Your server now tunnels TLS traffic to your backend server, without trying to decrypt it! also called tls passthrough.
